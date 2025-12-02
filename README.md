@@ -53,7 +53,7 @@ cp .env.example .env.local
 
 Edit `.env.local` with your API keys:
 
-See [SETUP.md]([https://github.com/vuejs/vue](https://github.com/pandeytatha/HackALink/blob/main/SETUP.md))
+See [SETUP.md](./blob/main/SETUP.md)
  for how to get these API keys
 ```env
 # OpenAI
