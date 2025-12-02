@@ -1,4 +1,4 @@
-# 🔗 HackaLink - Hackathon Networking Assistant
+# HackaLink - Hackathon Networking Assistant
 
 **People go to hackathons for networking**
 
