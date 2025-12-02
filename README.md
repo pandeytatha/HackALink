@@ -51,6 +51,7 @@ cp .env.example .env.local
 ```
 
 Edit `.env.local` with your API keys:
+See SetUp.md for how to get these API keys
 ```env
 # OpenAI
 OPENAI_API_KEY=your_openai_api_key
