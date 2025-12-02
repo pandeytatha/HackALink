@@ -2,7 +2,7 @@
 
 **People go to hackathons for networking**
 
-[Abhiram Segu]([https://github.com/vuejs/vue](https://github.com/Nightwolf7570/HackALink))
+[Abhiram Segu](https://github.com/Nightwolf7570/HackALink)
  and I wanted to help people make the most of hackathons and other tech events by helping users supercharge their networking and acquire that one personal connection that can lead to a future job or a new startup. HackALink is the tool for anyone interested in that potential opportunity. We've developed a powerful AI-driven application that aims to help you maximize that hackathon networking experience. We do this in 3 ways: analyzing participant data (given a participant list) on their social media such as LinkedIn and X in order to identify the most influential and accomplished people in various industries to connect with, providing personalized openers and conversation starters based on topics/interests that you might share with these individuals, and helping you generate LinkedIn posts with references to other significant contacts to document your wins and connections to other competitors!
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
