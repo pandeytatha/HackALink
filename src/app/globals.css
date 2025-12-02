@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Palette */
+    --color-primary: #3B82F6;
+    --color-primary-hover: #2563EB;
+    --color-accent: #1D4ED8;
+    
+    /* Neutral Palette */
+    --color-bg: #F9FAFB;
+    --color-surface: #FFFFFF;
+    --color-border: #E5E7EB;
+    --color-subtle: #F3F4F6;
+    --color-text-primary: #111827;
+    --color-text-secondary: #4B5563;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+    --shadow-elevated: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  }
+  
+  body {
+    @apply antialiased text-gray-900;
+    background-color: var(--color-bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Premium Card */
+  .card {
+    @apply bg-white rounded-xl border border-gray-200;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-elevated {
+    @apply bg-white rounded-xl border border-gray-100;
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .card-interactive {
+    @apply bg-white rounded-xl border border-gray-200 transition-all duration-200 ease-out;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-interactive:hover {
+    @apply border-gray-300;
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-1px);
+  }
+
+  /* Premium Input */
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400;
+    @apply transition-all duration-200 ease-out;
+    @apply focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50;
+  }
+  
+  .input-field:hover:not(:focus) {
+    @apply border-gray-300;
+  }
+
+  /* Premium Button - Primary */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5;
+    @apply bg-blue-500 text-white font-medium rounded-lg;
+    @apply transition-all duration-200 ease-out;
+    @apply hover:bg-blue-600 active:bg-blue-700;
+    @apply focus:outline-none focus:ring-4 focus:ring-blue-100;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    box-shadow: 0 1px 2px 0 rgb(59 130 246 / 0.2);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 2px 4px 0 rgb(59 130 246 / 0.3);
+  }
+  
+  /* Premium Button - Secondary */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5;
+    @apply bg-white text-gray-700 font-medium rounded-lg border border-gray-200;
+    @apply transition-all duration-200 ease-out;
+    @apply hover:bg-gray-50 hover:border-gray-300;
+    @apply focus:outline-none focus:ring-4 focus:ring-gray-100;
+  }
+  
+  /* Premium Button - Ghost */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2;
+    @apply text-gray-600 font-medium rounded-lg;
+    @apply transition-all duration-200 ease-out;
+    @apply hover:bg-gray-100 hover:text-gray-900;
+    @apply focus:outline-none focus:ring-4 focus:ring-gray-100;
+  }
+
+  /* Badge / Pill */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium;
+    @apply bg-gray-100 text-gray-600;
+  }
+  
+  .badge-primary {
+    @apply bg-blue-50 text-blue-700;
+  }
+  
+  .badge-success {
+    @apply bg-emerald-50 text-emerald-700;
+  }
+  
+  .badge-warning {
+    @apply bg-amber-50 text-amber-700;
+  }
+  
+  .badge-info {
+    @apply bg-sky-50 text-sky-700;
+  }
+
+  /* Avatar */
+  .avatar {
+    @apply rounded-full bg-gray-100 flex items-center justify-center font-semibold text-gray-600;
+    @apply ring-2 ring-white;
+  }
+  
+  .avatar-sm { @apply w-8 h-8 text-xs; }
+  .avatar-md { @apply w-10 h-10 text-sm; }
+  .avatar-lg { @apply w-12 h-12 text-base; }
+  .avatar-xl { @apply w-14 h-14 text-lg; }
+
+  /* Rank Badge */
+  .rank-badge {
+    @apply w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold;
+  }
+  
+  .rank-1 { @apply bg-amber-100 text-amber-700; }
+  .rank-2 { @apply bg-gray-200 text-gray-600; }
+  .rank-3 { @apply bg-orange-100 text-orange-700; }
+  .rank-default { @apply bg-gray-100 text-gray-500; }
+  
+  /* Table row hover */
+  .table-row-hover {
+    @apply hover:bg-gray-50 transition-colors;
+  }
+  
+  /* Tab styles */
+  .tab-item {
+    @apply px-4 py-2 text-sm font-medium rounded-lg transition-all duration-150;
+    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-100;
+  }
+  
+  .tab-item-active {
+    @apply bg-white text-gray-900 shadow-sm;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(59, 130, 246, 0.15);
+}
